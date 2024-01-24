@@ -5,11 +5,11 @@ on:
       paths:
         - './'
   
-  permissions:
+permissions:
     contents: write
     pages: write
   
-  jobs:
+jobs:
     build:
       runs-on: ubuntu-latest
   
@@ -24,7 +24,7 @@ on:
           with:
             version: 8
             run_install: false
-        - name: Build
+        - name: Build Docusaurus
           run: |
             pnpm install
             pnpm build
@@ -33,3 +33,4 @@ on:
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./build
+  
