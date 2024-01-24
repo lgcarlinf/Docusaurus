@@ -32,7 +32,9 @@ const config: Config = {
         label: 'Español',
       },
     }
+    
   },
+  
 
   presets: [
     [
@@ -79,6 +81,10 @@ const config: Config = {
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
