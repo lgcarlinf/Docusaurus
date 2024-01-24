@@ -11,7 +11,7 @@ const config: Config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/build',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -26,7 +26,12 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'es'],
+    localeConfigs: {
+      es: {
+        label: 'Español',
+      },
+    }
   },
 
   presets: [
