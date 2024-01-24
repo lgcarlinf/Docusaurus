@@ -12,7 +12,10 @@ permissions:
 jobs:
     build:
       runs-on: ubuntu-latest
-  
+      environment: production
+      env:
+        BASE_URL: ${{vars.BASE_URL}}
+
       steps:
         - name: Checkout
           uses: actions/checkout@v3
