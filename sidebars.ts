@@ -24,6 +24,10 @@ const sidebars: SidebarsConfig = {
       label: 'Tutorial',
       items: ['tutorial-basics/create-a-document'],
     },
+    {
+      label: 'redirect,
+      items: ['redirect/redirect'],
+    }
   ],
    */
 };
