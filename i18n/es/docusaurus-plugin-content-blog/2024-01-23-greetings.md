@@ -16,7 +16,6 @@ tags: [greetings]
 Felicitaciones, has creado tu primer post!
 
 Sientete libre de jugar y editar tanto como tu quieras.
-Vamos a ver como [ir a hello](/docs/hello).
 ![Docusaurus logo](../../../static/img/docusaurus.png)
 
 ```jsx title="src/components/HelloDocusaurus.js"
