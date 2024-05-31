@@ -17,7 +17,6 @@ Congratulations, you have made your first post!
 
 Feel free to play around and edit this post as much you like.
 
-Let's see how to [ir a hello](/docs/hello).
 ![Docusaurus logo](../static/img/docusaurus.png)
 
 ```jsx title="src/components/HelloDocusaurus.js"
