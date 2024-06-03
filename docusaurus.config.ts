@@ -1,63 +1,61 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: 'CodeNest',
-  tagline: "Explora, aprende y crea en el emocionante mundo del desarrollo de software.",
-  favicon: 'img/favicon.ico',
+  title: "CodeNest",
+  tagline:
+    "Explora, aprende y crea en el emocionante mundo del desarrollo de software.",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: "https://your-docusaurus-site.example.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.BASE_URL  ?? '/build',
+  baseUrl: process.env.BASE_URL ?? "/build",
   //add mermaid '@docusaurus/theme-mermaid'
-
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "docusaurus", // Usually your repo name.
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'es'],
+    defaultLocale: "es",
+    locales: ["es", "en"],
     localeConfigs: {
       es: {
-        label: 'Español',
+        label: "Español",
       },
-    }
-    
+      en: {
+        label: "English",
+      },
+    },
   },
-  
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/lgcarlinf',
+          editUrl: "https://github.com/lgcarlinf",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/lgcarlinf',
+          editUrl: "https://github.com/lgcarlinf",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -66,76 +64,76 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
 
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: 'CodeNest',
+      title: "CodeNest",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "My Site Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Tutorial",
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        { to: "/blog", label: "Blog", position: "left" },
         {
-          href: 'https://github.com/lgcarlinf',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/lgcarlinf",
+          label: "GitHub",
+          position: "right",
         },
         {
-          type: 'localeDropdown',
-          position: 'right',
+          type: "localeDropdown",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: "Tutorial",
+              to: "/docs/intro",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "Stack Overflow",
+              href: "https://stackoverflow.com/questions/tagged/docusaurus",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: "Discord",
+              href: "https://discordapp.com/invite/docusaurus",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: "Twitter",
+              href: "https://twitter.com/docusaurus",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "Blog",
+              to: "/blog",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/lgcarlinf',
+              label: "GitHub",
+              href: "https://github.com/lgcarlinf",
             },
           ],
         },
@@ -147,7 +145,7 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
   markdown: {
     mermaid: true,
   },

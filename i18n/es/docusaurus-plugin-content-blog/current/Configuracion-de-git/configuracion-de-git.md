@@ -1,10 +1,14 @@
 # Configuracion de git
 
-ATENCION: Guia basada en sistemas UNIX, para windows usar los commandos análogos o
+:::warning
+Guia basada en sistemas UNIX, para windows usar los commandos análogos o
 el explorador de archivos de su preferencia
+:::
 
-ATENCION: No es una guía lineal, no solo ejecute los comandos, revise minuciosamente
+:::warning
+ No es una guía lineal, no solo ejecute los comandos, revise minuciosamente
 las indicaciones y si el caso que lo corresponde
+:::
 
 ## Antes de empezar
 
@@ -18,7 +22,7 @@ respositorios git
 2. Crear carpetas con archivos de configuración de git para que
 puedan usar las diferentes laves ssh según se necesite
 
-3. Colcar las instrucciones en el archivo de configuración de git a nivel
+3. Colocar las instrucciones en el archivo de configuración de git a nivel
 de usuario para que escoja correctamente cual llave shh usar para operaciones
 como push de ramas y clonación de repositorios.
 
@@ -34,14 +38,14 @@ cd ~/.ssh
 Podemos generar nuestra pareja de llaves ssh con el comando
 
 ```bash
-ssh-keygen -t rsa -f ./id_rsa_pacifico
+ssh-keygen -t rsa -f ./id_rsa_alternative
 ```
 
 o solo con
 
 
 ```bash
-ssh-keygen -f ./id_rsa_pacifico
+ssh-keygen -f ./id_rsa_alternative
 ```
 
 O con cualquier otro algoritmo de su preferecia/necesidad
@@ -49,8 +53,10 @@ O con cualquier otro algoritmo de su preferecia/necesidad
 El parametro -t permte escoger el agoritmo, por o gnral usamos rsa ya q es el mas
 aceptado en diferentes repositorios de git como por ejemplo el de azure
 
-ATENCION: No se limite solo a esta guia, si necesita mas opciones para
+:::warning
+No se limite solo a esta guia, si necesita mas opciones para
 configurar, puede usar, en sistemas UNIX
+:::
 
 ```bash
 man ssh-keygen
@@ -71,31 +77,31 @@ Ejemplo
 ```bash
 ssh-keygen -f ./id_rsa_personal
 ```
-
-ATENCION: El valor ./ en el parametro -f funcionaa siempre que estemos ubicados
+:::note
+El valor ./ en el parametro -f funcionara siempre que estemos ubicados
 la carpeta .ssh EN NUESTRO EMULADOR DE TERMIMAL, si solo estamos ubicados en el 
 explorador de archivos no funcionaria
+:::
 
-
-## Disribucion de configuraciones
+## Distribucion de configuraciones
 Como ejemplo creare dos carpetas
 
 ```bash
-mkdir pacifico personal
+mkdir alternative personal
 
 ```
-Navegamos a la carpeta pacifico
+Navegamos a la carpeta alternative
 
 ```bash
-cd pacifico
+cd alternative
 
 ```
-Creamos un archivo llamado .gitconfig.pacifico.
+Creamos un archivo llamado .gitconfig.alternative.
 
 Por ejemplo para sistemas basados en UNIX y usar vscde
 
 ```bash
-code .gitconfig.pacifico
+code .gitconfig.alternative
 ```
 
 O usar editor de su preferencia
@@ -105,18 +111,18 @@ Luego podemos insertar algo como
 
 ```bash
 [user]
-email = developer@provedor.com # el correo de su proveedor
+email = developer@provedor.com # el correo de su cuenta de github
 name = Developer # nombre del desarrollador, no usar alias
 
 [github]
-user = "developer_paciico" # usuario de su ceunta corporativa
+user = "developer_asfg" # usuario de su ceunta de github
 
 [core]
-sshCommand = "ssh -i ~/.ssh/id_rsa_pacifico"
+sshCommand = "ssh -i ~/.ssh/id_rsa_alternative"
 ```
 
 Como veran aca se hace referencia a la llave rsa q se creo exclusivamente
-para pacifico
+para alternative
 
 
 Guardamos, y ahora nos movemos a a carpeta personal
@@ -136,11 +142,11 @@ Colocamos algo como
 
 ```bash
 [user]
-email = shadow@personal.com # el correo de mi cuenta personal de github
-name = Shadow # Mi nombre con el q firmo mis commits como develope open source
+email = lgcarlinf@personal.com # el correo de mi cuenta personal de github
+name = lgcarlinf # Mi nombre con el q firmo mis commits como develope open source
  
 [github]
-user = "Shadow_press_start" mi usuario personal de github 
+user = "lgcarlinf" mi usuario personal de github 
 
 [core]
 sshCommand = "ssh -i ~/.ssh/id_rsa_personal"
@@ -177,8 +183,8 @@ defaultBranch = main
 [includeIf "gitdir:~/personal/"] # inluye todos los .git projects en personnal/ 
 path = ~/personal/.gitconfig.personal
 
-[includeIf "gitdir:~/pacifico/"]
-path = ~/pacifico/.gitconfig.pacifico
+[includeIf "gitdir:~/alternative/"]
+path = ~/alternative/.gitconfig.alternative
  
 
 # Se puede crear aun mas enrutamientos a mas carpetas con config diferente
@@ -193,10 +199,10 @@ excludesfile = ~/.gitignore  # valid everywhere
 Como se puede apreciar hemos enrutado el uso de las llave sh dependiendo de la
 carpeta dode estemos
 
-A partir de ahora si quiero clonar repos de paciico, debo hacerlo
-desde mi carpeta pacifico
+A partir de ahora si quiero clonar repos debo hacerlo
+desde mi carpeta alternative
 
-Si desea cambiar la configuración de pacifico debo modificar el archivo .gitconfig.pacifico y 
+Si desea cambiar la configuración de alternative debo modificar el archivo .gitconfig.alternative y 
 no afectare la configuración de mis otras carpetas.
 
 ## Subir la llave publica a Github
@@ -205,10 +211,10 @@ Recordemos que los contenidos de la llave privada no deben ser divulgados, solo 
 
 Las llaves publicas tienen la terminación .pub y ya se crearon anteriormente junto con su pareja privada
 
-Por ejemplo para acceder a los contenidos de la llave publica pacifico
+Por ejemplo para acceder a los contenidos de la llave publica alternative
 
 ```bash
-cat ~/.ssh/id_rsa_pacifico.pub
+cat ~/.ssh/id_rsa_alternative.pub
 ```
 
 y este contenido se debe copiar y pegar en github en el apartado respectivo.
@@ -221,7 +227,7 @@ izquierdo la opción de SSH.
 
 ## Clonar repositorios
 
-Para clonar los repositorios no se debe usar el protocolo https, sino el ssh y adentro de la carpeta `pacifico` o 
+Para clonar los repositorios no se debe usar el protocolo https, sino el ssh y adentro de la carpeta `alternative` o 
 su equivalente.
 
 Al momento hacer click en el botón `Code`, escoger la opción `SSH` y no HTTPS
@@ -229,8 +235,7 @@ Al momento hacer click en el botón `Code`, escoger la opción `SSH` y no HTTPS
 Asegurarse que el formato no contenga una URI https, sino ssh o el formato ssh de git
 
 ```bash
-git clone git@github.com:Wiki-Pacifico/knowledge-center.git
+git clone git@github.com:Wiki-alternative/knowledge-center.git
 ```
 
-**No olvidar estar adentro de la carpeta pacifico o su equivalente**
-
+**No olvidar estar adentro de la carpeta alternative o su equivalente**
